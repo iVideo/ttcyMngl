@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9EA09973-F1B0-4601-8507-824C6BA0021B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>TtcyMngl</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>844D3B04-876C-4C6D-B11E-7B2F13061F3E</key>
+		<string>https://192.168.2.253:8443/svn/ttcy_ios/iOS_MO</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>TtcyMngl.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>844D3B04-876C-4C6D-B11E-7B2F13061F3E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectRepositoryRootDictionary</key>
+	<dict>
+		<key>844D3B04-876C-4C6D-B11E-7B2F13061F3E</key>
+		<string>https://192.168.2.253:8443/svn/ttcy_ios</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://192.168.2.253:8443/svn/ttcy_ios/iOS_MO/TtcyMngl.xcodeproj</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>844D3B04-876C-4C6D-B11E-7B2F13061F3E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.subversion</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>844D3B04-876C-4C6D-B11E-7B2F13061F3E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iOS_MO</string>
+		</dict>
+	</array>
+</dict>
+</plist>
