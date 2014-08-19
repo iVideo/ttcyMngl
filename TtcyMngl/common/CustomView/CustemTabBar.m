@@ -37,14 +37,13 @@
 
 -(void)createItems
 {
-    CGRect rect = CGRectMake(0, 0, self.bounds.size.width/self.menuItems.count, self.bounds.size.height);
+    CGRect rect = CGRectMake(0, 0, 43.75, 35);
     CGFloat x = kMainScreenWidth/(self.menuItems.count * 2);
     
     for (int i = 0; i<_menuItems.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.frame = rect;
         button.center = CGPointMake(x, self.bounds.size.height/2.0f);
-        
         button.titleLabel.font = [UIFont fontWithName:@"Menksoft Qagan" size:18.0f];
         
         [button setTitleColor:[Utils colorWithHexString:@"#ffffff"] forState:UIControlStateNormal];
@@ -54,9 +53,9 @@
         
         button.backgroundColor = [UIColor clearColor];
         button.titleLabel.numberOfLines = 0;
+        [button setShowsTouchWhenHighlighted:YES];
         
         [button setImage:[UIImage imageNamed:((MenuItem *)_menuItems[i]).icon] forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:((MenuItem *)_menuItems[i]).h_icon] forState:UIControlStateHighlighted];
         [button setImage:[UIImage imageNamed:((MenuItem *)_menuItems[i]).h_icon] forState:UIControlStateSelected];
         
         [button addTarget:self action:@selector(menuItemClicked:) forControlEvents:UIControlEventTouchUpInside];
@@ -75,10 +74,12 @@
 {
     for (id elment in self.subviews) {
         if ([elment isKindOfClass:[UIButton class]]) {
-            [elment setBackgroundImage:[Utils createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
+//            [elment setBackgroundImage:[Utils createImageWithColor:[UIColor clearColor]] forState:UIControlStateNormal];
+            [elment setSelected:NO];
         }
     }
     UIButton * button = (UIButton *)[self viewWithTag:itemTag];
-    [button setBackgroundImage:[Utils createImageWithColor:[Utils colorWithHexString:@"#0067b7"]] forState:UIControlStateNormal];
+    [button setSelected:YES];
+//    [button setBackgroundImage:[Utils createImageWithColor:[Utils colorWithHexString:@"#0067b7"]] forState:UIControlStateNormal];
 }
 @end

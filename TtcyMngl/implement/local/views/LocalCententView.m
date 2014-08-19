@@ -42,19 +42,20 @@
 {
     self.showsVerticalScrollIndicator = YES;
     self.showsHorizontalScrollIndicator = NO;
+    self.scrollEnabled = NO;
     self.backgroundColor = [UIColor clearColor];
     self.titleArray = [NSArray array];
     self.iconArray = [NSArray array];
     self.classArray = [NSArray array];
     self.itemArray = [NSArray array];
-    
+    self.backgroundColor = [UIColor clearColor];
     CGSize newSize = CGSizeMake(kMainScreenWidth,  kMainScreenHeight);
     self.contentSize = newSize;
 }
 -(void)createMenuItems
 {
-    _titleArray = @[@" ",@"\n",@" ",@" "];
-    _iconArray = @[@"mymusic_btn01.png",@"mymusic_btn02.png",@"mymusic_btn03.png",@"mymusic_btn04.png"];
+    _titleArray = @[@" ",@" ",@" ",@" "];
+    _iconArray = @[@"mymusic_btn01",@"mymusic_btn02",@"mymusic_btn03",@"mymusic_btn04"];
     _classArray = @[@"SongListViewController",
                     @"CollectListViewController",
                     @"DownloadListViewController",
@@ -64,10 +65,10 @@
     static NSInteger index = 0;
     
     for (int i = 0; i < _titleArray.count; i++) {
-        LocalMenuButon * button = [[LocalMenuButon alloc]initWithTitle:_titleArray[i] Icon:_iconArray[i] Class:_classArray[i] item:_itemArray[i]];
-        [button setShowsTouchWhenHighlighted:YES];
-        CGFloat centerX = kMainScreenWidth/4.0 + ((index%2) * kMainScreenWidth/2.0);
-        CGFloat centerY = kMainScreenWidth/4.0 + ((index/2) * kMainScreenWidth/2.0)+5;
+        LocalMenuButon * button = [[LocalMenuButon alloc]initWithTitle:_titleArray[i] Icon:_iconArray[i] Class:_classArray[i] item:nil];
+        
+        CGFloat centerX = kMainScreenWidth/8.0 + (index * kMainScreenWidth/4.0);
+        CGFloat centerY = self.bounds.size.height/5.0+50;
         button.center = CGPointMake(centerX, centerY);
         button.delegate = self;
         [self addSubview:button];
@@ -100,7 +101,7 @@
     NSString *localStr = [NSString stringWithFormat:@"  %d ", localSongCount];
     NSString *downloadStr = [NSString stringWithFormat:@" %d ", downloadSongCount];
     NSString *playRecordStr = [NSString stringWithFormat:@" %d ", playRecordSongCount];
-    collectStr = [NSString stringWithFormat:@" %d ", collectSongCount];
+    collectStr = [NSString stringWithFormat:@" %d ", collectSongCount];
     NSArray *array = [[NSArray alloc] init];
     array = @[localStr, collectStr, downloadStr, playRecordStr];
     return array;

@@ -194,9 +194,17 @@
 {
     UIViewController *root = navigationController.viewControllers[0];
     if (viewController != root) {
+        
         // 1.添加左边的返回键
-        viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) name:@"back_btn"];
-//        viewController.title = @"Tengri Tal";
+        
+        if (isIOS7) {
+            UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:@selector(back)];
+            [backItem setImage:[UIImage imageNamed:@"nav_back"]];
+            [backItem setImageInsets:UIEdgeInsetsMake(0, -10, 0, 10)];
+            viewController.navigationItem.leftBarButtonItem = backItem;
+        }else{
+            viewController.navigationItem.leftBarButtonItem = [UIBarButtonItem itemWithTarget:self action:@selector(back) name:@"nav_back"];
+        }
         _tab.hidden = YES;
         viewController.navigationController.navigationBar.hidden = NO;
     }else{
@@ -269,7 +277,7 @@
 -(void)PlayBarHeadImagePressed:(SongObject *)aSong
 {
     if (aSong) {
-        if (!(playBarHeadPressed|[_navigation.topViewController isKindOfClass:[MusicPlayerViewController class]])) {
+        if (!playBarHeadPressed) {
             
             MusicPlayerViewController * MVC = [[MusicPlayerViewController alloc]initWithSongObject:aSong andViewController:self];
             [_playBar addListener:MVC];
@@ -279,11 +287,11 @@
     }else{}
     
 }
--(void)PlayBarMenuButtonPressed:(NSArray *)queueArray
+-(void)PlayBarMenuButtonPressed
 {
     if (!playBarMenuPressed) {
-        
-        PlayQueueListViewController * listVC = [[PlayQueueListViewController alloc]initWithListArray:queueArray];
+        NSArray * array = [[PlayBar defultPlayer]getPlayerQueueData];
+        PlayQueueListViewController * listVC = [[PlayQueueListViewController alloc]initWithListArray:array];
         [_playBar addListener:listVC];
         [_navigation pushViewController:listVC animated:YES];
     }
@@ -309,7 +317,7 @@ static BOOL musicBarFlag = YES;
 -(void)playBarMoreButtonPressed
 {
     
-    if (musicBarFlag) {
+    if (musicBarFlag && [[PlayBar defultPlayer]getPlayerQueueData].count>0) {
         
         MenuItem * item0 = [MenuItem itemWithIcon:@"collect_btn" hightLightIcon:@"collect_btn_h" title:@"" vcClass:nil andTag:10000];
         
@@ -425,8 +433,9 @@ static BOOL musicBarFlag = YES;
 -(void)oprationDownLoad
 {
     [self musicOprationBarHidde];
+    
     [[DownloadListViewController shareInstance] setDownLoadObject:[[PlayBar defultPlayer] getCurrentPlayingSong]];
-    [HUD message:@"     \n  -> "];
+    [HUD message:@"    \n  ->  "];
 }
 
 #pragma mark - IntroViewManagerDelegate methods

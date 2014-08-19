@@ -22,17 +22,33 @@
 {
     self = [super init];
     if (self) {
-        self.frame = CGRectMake(0, 0, kMainScreenWidth/2.0 - 1, kMainScreenWidth/2.0 - 1);
-        [self setBackgroundImage:[Utils createImageWithColor:LVORYWHITE_COLOR_ALPHA09] forState:UIControlStateNormal];
+        
+        getPlayBarHeight();
+        
+        self.frame = CGRectMake(0, 0, 200, kMainScreenWidth/4.0 - 1);
+        self.backgroundColor = [UIColor clearColor];
         
         self.vcClass = className;
-        [self createIconWithIconName:iconName];
-        [self createTextLabel:title];
-        [self createInfoLabel:itemName];
-        [self addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+
+        [self setBackgroundColor:[UIColor clearColor]];
+        self.transform = CGAffineTransformMakeRotation(M_PI_2);
         
-        CGAffineTransform rotate = CGAffineTransformMakeRotation(M_PI_2);
-        [self setTransform:rotate];
+        [self setImage:[UIImage imageNamed:iconName] forState:UIControlStateNormal];
+        self.imageEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 130);
+        self.imageView.transform = CGAffineTransformMakeRotation(-M_PI_2);
+        
+        
+        UILabel * titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 130, 40)];
+        titleLabel.center = CGPointMake(self.center.x+45, self.center.y);
+        titleLabel.text = title;
+        
+        titleLabel.font = [UIFont fontWithName:@"Menksoft Qagan" size:18.0f];
+        titleLabel.textColor = [UIColor blackColor];
+        titleLabel.backgroundColor = [UIColor clearColor];
+        [self addSubview:titleLabel];
+        
+        [self addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+        [self setShowsTouchWhenHighlighted:YES];
     }
     return self;
 }
@@ -40,10 +56,8 @@
 {
     self.icon = [[UIImageView alloc] initWithImage:[UIImage imageNamed:iconName]];
     _icon.transform = CGAffineTransformMakeRotation(-M_PI_2);
-    _icon.layer.cornerRadius = 5;
-    _icon.layer.masksToBounds = YES;
-    _icon.frame = CGRectMake(0, 0, 30, 30);
-    _icon.center = CGPointMake(self.bounds.size.width /4.0f-10, self.bounds.size.height/2.0f+30);//self.bounds.size.width = 159   self.bounds.size.height = 159
+    _icon.frame = CGRectMake(0, 0, 50, 50);
+    _icon.center = CGPointMake(25, self.bounds.size.height/2.0f);
     [self addSubview:_icon];
 }
 -(void)createTextLabel:(NSString *)textString

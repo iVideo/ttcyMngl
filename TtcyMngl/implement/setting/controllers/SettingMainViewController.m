@@ -257,9 +257,8 @@
         [userSDK shareApp];
     }
     if (indexPath.row == 4) {
-//        AboutViewController * AVC = [[AboutViewController alloc]init];
-//        [self.navigationController pushViewController:AVC animated:YES];
-        [self payProduct];
+        AboutViewController * AVC = [[AboutViewController alloc]init];
+        [self.navigationController pushViewController:AVC animated:YES];
     }
     SettingsTableCell *cell = (SettingsTableCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
     cell.selected = NO;
@@ -271,6 +270,9 @@
     }
     return 60;
 }
+
+#pragma mark - 调用微信支付
+
 - (void)payProduct
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hiddeHUD) name:HUDDismissNotification object:nil];

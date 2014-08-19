@@ -90,6 +90,13 @@
 		04CB73631952D4E100DCE0B0 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB73621952D4E100DCE0B0 /* BaseViewController.m */; };
 		04CB73661952D51D00DCE0B0 /* DownloadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB73651952D51D00DCE0B0 /* DownloadListViewController.m */; };
 		04CB736F1952D5A400DCE0B0 /* PlayRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CB736E1952D5A400DCE0B0 /* PlayRecordViewController.m */; };
+		04CE660A19A19DED00403257 /* nav_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660819A19DED00403257 /* nav_back.png */; };
+		04CE660B19A19DED00403257 /* nav_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660919A19DED00403257 /* nav_back@2x.png */; };
+		04CE661119A1FCA700403257 /* mymusic_btn04@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660C19A1FCA700403257 /* mymusic_btn04@2x.png */; };
+		04CE661219A1FCA700403257 /* mymusic_btn02@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660D19A1FCA700403257 /* mymusic_btn02@2x.png */; };
+		04CE661319A1FCA700403257 /* mymusic_btn01@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660E19A1FCA700403257 /* mymusic_btn01@2x.png */; };
+		04CE661419A1FCA700403257 /* mymusic_btn03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE660F19A1FCA700403257 /* mymusic_btn03@2x.png */; };
+		04CE661519A1FCA700403257 /* mymusic_btn05@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 04CE661019A1FCA700403257 /* mymusic_btn05@2x.png */; };
 		04CE96A1195AA32700DFEE83 /* SongInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04CE96A0195AA32700DFEE83 /* SongInfoView.m */; };
 		04CE97FD195AD2DE00DFEE83 /* history_play_index.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CE97FC195AD2DE00DFEE83 /* history_play_index.plist */; };
 		04EE16451981072D00B0CA87 /* mnglartaat.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04EE15C41981072C00B0CA87 /* mnglartaat.ttf */; };
@@ -419,6 +426,13 @@
 		04CB73651952D51D00DCE0B0 /* DownloadListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadListViewController.m; sourceTree = "<group>"; };
 		04CB736D1952D5A400DCE0B0 /* PlayRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayRecordViewController.h; sourceTree = "<group>"; };
 		04CB736E1952D5A400DCE0B0 /* PlayRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayRecordViewController.m; sourceTree = "<group>"; };
+		04CE660819A19DED00403257 /* nav_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nav_back.png; sourceTree = "<group>"; };
+		04CE660919A19DED00403257 /* nav_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nav_back@2x.png"; sourceTree = "<group>"; };
+		04CE660C19A1FCA700403257 /* mymusic_btn04@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymusic_btn04@2x.png"; sourceTree = "<group>"; };
+		04CE660D19A1FCA700403257 /* mymusic_btn02@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymusic_btn02@2x.png"; sourceTree = "<group>"; };
+		04CE660E19A1FCA700403257 /* mymusic_btn01@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymusic_btn01@2x.png"; sourceTree = "<group>"; };
+		04CE660F19A1FCA700403257 /* mymusic_btn03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymusic_btn03@2x.png"; sourceTree = "<group>"; };
+		04CE661019A1FCA700403257 /* mymusic_btn05@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mymusic_btn05@2x.png"; sourceTree = "<group>"; };
 		04CE969F195AA32700DFEE83 /* SongInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongInfoView.h; sourceTree = "<group>"; };
 		04CE96A0195AA32700DFEE83 /* SongInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongInfoView.m; sourceTree = "<group>"; };
 		04CE97FC195AD2DE00DFEE83 /* history_play_index.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = history_play_index.plist; sourceTree = "<group>"; };
@@ -960,6 +974,8 @@
 		04EE15CA1981072C00B0CA87 /* defaults */ = {
 			isa = PBXGroup;
 			children = (
+				04CE660819A19DED00403257 /* nav_back.png */,
+				04CE660919A19DED00403257 /* nav_back@2x.png */,
 				043A68B11987452E00EF8412 /* menu_setting_h.png */,
 				043A68B21987452F00EF8412 /* menu_local_h.png */,
 				043A68B31987452F00EF8412 /* menu_online_h.png */,
@@ -996,6 +1012,11 @@
 		04EE15D71981072D00B0CA87 /* localImage */ = {
 			isa = PBXGroup;
 			children = (
+				04CE660C19A1FCA700403257 /* mymusic_btn04@2x.png */,
+				04CE660D19A1FCA700403257 /* mymusic_btn02@2x.png */,
+				04CE660E19A1FCA700403257 /* mymusic_btn01@2x.png */,
+				04CE660F19A1FCA700403257 /* mymusic_btn03@2x.png */,
+				04CE661019A1FCA700403257 /* mymusic_btn05@2x.png */,
 				04EE15D81981072D00B0CA87 /* mymusic_btn01.png */,
 				04EE15D91981072D00B0CA87 /* mymusic_btn02.png */,
 				04EE15DA1981072D00B0CA87 /* mymusic_btn03.png */,
@@ -1701,10 +1722,12 @@
 				04EE16811981072D00B0CA87 /* collect_btn@2x.png in Resources */,
 				04EE169D1981072D00B0CA87 /* players_show_btn.png in Resources */,
 				04EE16491981072D00B0CA87 /* OyutamongbaitiM.ttf in Resources */,
+				04CE661319A1FCA700403257 /* mymusic_btn01@2x.png in Resources */,
 				04EE16A01981072D00B0CA87 /* players_show_btn_h@2x.png in Resources */,
 				04EE16B51981072D00B0CA87 /* set_icon_about.png in Resources */,
 				04EE16BB1981072D00B0CA87 /* share.png in Resources */,
 				04EE167D1981072D00B0CA87 /* cancel_btn@2x.png in Resources */,
+				04CE661219A1FCA700403257 /* mymusic_btn02@2x.png in Resources */,
 				04EE166C1981072D00B0CA87 /* remove_btn.png in Resources */,
 				04EE16A51981072D00B0CA87 /* previous_btn.png in Resources */,
 				04EE169F1981072D00B0CA87 /* players_show_btn_h.png in Resources */,
@@ -1721,6 +1744,7 @@
 				04EE16831981072D00B0CA87 /* collect_btn_h@2x.png in Resources */,
 				04EE16B61981072D00B0CA87 /* set_icon_about@2x.png in Resources */,
 				04EE167F1981072D00B0CA87 /* cancel_btn_h@2x.png in Resources */,
+				04CE660A19A19DED00403257 /* nav_back.png in Resources */,
 				047BA956196BCEB1003ECA14 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				04EE16461981072D00B0CA87 /* mngltitleaat.ttf in Resources */,
 				04EE16501981072D00B0CA87 /* menu_local.png in Resources */,
@@ -1732,6 +1756,7 @@
 				04EE169B1981072D00B0CA87 /* players_img_default.png in Resources */,
 				04EE16B41981072D00B0CA87 /* share_btn_h@2x.png in Resources */,
 				04EE16751981072D00B0CA87 /* all_play@2x.png in Resources */,
+				04CE661419A1FCA700403257 /* mymusic_btn03@2x.png in Resources */,
 				04EE164C1981072D00B0CA87 /* applicationBG@2x.png in Resources */,
 				04EE16741981072D00B0CA87 /* all_play.png in Resources */,
 				84BC55A619453D8D0082DE99 /* InfoPlist.strings in Resources */,
@@ -1751,6 +1776,7 @@
 				04EE16A91981072D00B0CA87 /* progress_bar.png in Resources */,
 				04EE16911981072D00B0CA87 /* playBar_slider_thum 2.png in Resources */,
 				04EE16791981072D00B0CA87 /* all_stop@2x.png in Resources */,
+				04CE661119A1FCA700403257 /* mymusic_btn04@2x.png in Resources */,
 				04EE165F1981072D00B0CA87 /* savepass_uncheck.png in Resources */,
 				04EE16581981072D00B0CA87 /* mymusic_btn03.png in Resources */,
 				04EE16981981072D00B0CA87 /* players_hide_btn@2x.png in Resources */,
@@ -1782,9 +1808,11 @@
 				04EE169A1981072D00B0CA87 /* players_hide_btn_h@2x.png in Resources */,
 				043A68AF1987250800EF8412 /* 3.png in Resources */,
 				04EE168D1981072D00B0CA87 /* next_btn@2x.png in Resources */,
+				04CE660B19A19DED00403257 /* nav_back@2x.png in Resources */,
 				043A68A61987231500EF8412 /* IMG_0024.PNG in Resources */,
 				04EE16671981072D00B0CA87 /* online_rank@2x.png in Resources */,
 				84BC55AE19453D8D0082DE99 /* Images.xcassets in Resources */,
+				04CE661519A1FCA700403257 /* mymusic_btn05@2x.png in Resources */,
 				04EE16B21981072D00B0CA87 /* share_btn@2x.png in Resources */,
 				04EE16A21981072D00B0CA87 /* playlists_btn@2x.png in Resources */,
 				04EE16B91981072D00B0CA87 /* set_icon_refresh.png in Resources */,

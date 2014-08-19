@@ -58,7 +58,7 @@ NSString * const HUDDismissNotification = @"HUDDismissNotification";
     // Override point for customization after application launch.
     UINavigationBar * bar = [UINavigationBar appearance];
     [bar setBackgroundImage:[Utils createImageWithColor:NVC_COLOR] forBarMetrics:UIBarMetricsDefault];
-    
+    [bar setTintColor:[UIColor whiteColor]];
     self.window.rootViewController = [[MainViewController alloc]init];
     
     [WXApi registerApp:WXAppId];
@@ -67,7 +67,7 @@ NSString * const HUDDismissNotification = @"HUDDismissNotification";
     
     [self addNotifiCation];
     
-//    [UserShareSDK initWithShareConfig];//初始化分享配置
+    [UserShareSDK initWithShareConfig];//初始化分享配置
     
     [FMDBManager defaultManager];//创建数据库，并初始化
     
@@ -99,8 +99,6 @@ NSString * const HUDDismissNotification = @"HUDDismissNotification";
 }
 - (void)setBackDisplayInfo:(NSNotification *)notifi
 {
-    SongObject * song = notifi.object;
-    
     NSMutableDictionary * dict = [NSMutableDictionary dictionary];
 
     [dict setObject:@"TengrTal" forKey:MPMediaItemPropertyTitle];
@@ -145,7 +143,7 @@ NSString * const HUDDismissNotification = @"HUDDismissNotification";
             
             if (list.count>0) {
                 manager.currentAccount = list[0];
-                manager.historyAccounts = list;
+                manager.historyAccounts = [NSMutableArray arrayWithArray:list];
             }
             
             if (manager.currentAccount.savePasswd) {
@@ -166,16 +164,16 @@ NSString * const HUDDismissNotification = @"HUDDismissNotification";
 #pragma ShareSDK - 检查是否已加入handleOpenURL的处理方法，如果没有则添加如下代码
 - (BOOL)application:(UIApplication *)application  handleOpenURL:(NSURL *)url
 {
-    return /*[ShareSDK handleOpenURL:url
-                        wxDelegate:self]||*/[WXApi handleOpenURL:url delegate:self];
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self]||[WXApi handleOpenURL:url delegate:self];
 }
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
-    return /*[ShareSDK handleOpenURL:url
+    return [ShareSDK handleOpenURL:url
                  sourceApplication:sourceApplication
                         annotation:annotation
-                        wxDelegate:self]||*/[WXApi handleOpenURL:url delegate:self];
+                        wxDelegate:self]||[WXApi handleOpenURL:url delegate:self];
 }
 
 

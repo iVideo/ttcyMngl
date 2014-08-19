@@ -94,8 +94,8 @@
 }
 -(void)createSeparatorLine
 {
-    UIView * line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kMainScreenHeight, 1)];
-    line.backgroundColor = [UIColor colorWithWhite:.8f alpha:1];
+    UIView * line = [[UIView alloc]initWithFrame:CGRectMake(0, 0, kMainScreenHeight, .3f)];
+    line.backgroundColor = [UIColor colorWithWhite:1 alpha:.5f];
     [self.contentView addSubview:line];
 }
 -(void)setUpCellDataWithImage:(NSString *)image title:(NSString *)title detail:(NSString *)detail

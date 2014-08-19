@@ -48,7 +48,7 @@
     
     UIView *meunView=[[UIView alloc]initWithFrame:CGRectMake(0,TopBarHeight+86,self.view.frame.size.width,self.view.frame.size.height-86)];
     
-    NSArray *titleArr=[NSArray arrayWithObjects:@"",@"",@"",@"", nil];
+    NSArray *titleArr=[NSArray arrayWithObjects:@"",@"",@"",@"", nil];
     NSArray *imageArray = @[@"online_song",@"online_album",@"online_singer",@"online_rank"];
     
     static NSInteger index = 0;
@@ -80,7 +80,7 @@
         CGFloat centerY = kMainScreenWidth/5.0+50;
         
         meunBtn.center = CGPointMake(centerX, centerY);
-        
+        [meunBtn setShowsTouchWhenHighlighted:YES];
         [meunView addSubview:meunBtn];
 
         index ++;

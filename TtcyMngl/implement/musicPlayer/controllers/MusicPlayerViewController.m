@@ -130,10 +130,18 @@
     _pageControl.currentPage=0;
     _pageControl.enabled=YES;
     
-    self.navigationItem.rightBarButtonItems = @[[UIBarButtonItem itemWithTarget:nil action:nil name:@""],
-                                                [UIBarButtonItem itemWithTarget:nil action:nil name:@""],
-                                                [UIBarButtonItem itemWithTarget:nil action:nil name:@""]] ;
-//    [_pageControl addTarget:self action:@selector(pageTurn:) forControlEvents:UIControlEventValueChanged];
+    UIBarButtonItem *backItem = nil;
+    if (isIOS7) {
+        backItem = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStyleBordered target:[UIApplication sharedApplication].keyWindow.rootViewController action:@selector(PlayBarMenuButtonPressed)];
+        [backItem setImage:[UIImage imageNamed:@"playlists_btn"]];
+        [backItem setImageInsets:UIEdgeInsetsMake(0, -10, 0, 10)];
+    }else{
+        backItem = [UIBarButtonItem itemWithTarget:[UIApplication sharedApplication].keyWindow.rootViewController action:@selector(PlayBarMenuButtonPressed) name:@"playlists_btn"];
+    }
+    
+    
+    self.navigationItem.rightBarButtonItems = @[backItem,[UIBarButtonItem itemWithTarget:nil action:nil name:@""],[UIBarButtonItem itemWithTarget:nil action:nil name:@""]];
+
     [self.navigationItem setTitleView:self.pageControl];
     
 }

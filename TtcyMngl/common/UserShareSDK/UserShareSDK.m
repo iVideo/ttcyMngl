@@ -7,7 +7,7 @@
 //
 
 #import "UserShareSDK.h"
-
+#import "Constant.h"
 
 @interface UserShareSDK ()
 {
@@ -24,7 +24,7 @@
 
 + (void)initWithShareConfig
 {
-    [ShareSDK registerApp:@"227e7d3c6c08"];     //参数为ShareSDK官网中添加应用后得到的AppKey
+    [ShareSDK registerApp:@"227e7d3c6c08"];     //参数为ShareSDK官网中添加应用后得到的AppKey  @"227e7d3c6c08"
 
     [ShareSDK importTencentWeiboClass:[WeiboApi class]];
     

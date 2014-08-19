@@ -13,7 +13,7 @@
         [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     }
     [btn setBackgroundImage:[UIImage imageNamed:name] forState:UIControlStateNormal];
-    btn.bounds = (CGRect){CGPointZero, {30, 30}};
+    btn.bounds = (CGRect){CGPointZero, {35, 30}};
     return [[UIBarButtonItem alloc] initWithCustomView:btn];
 }
 @end

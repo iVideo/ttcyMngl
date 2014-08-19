@@ -133,7 +133,10 @@ PlayBar * instence = nil;
     _headImage.frame = CGRectMake(10, 30-8, self.bounds.size.height - 30, self.bounds.size.height - 30);
     [_headImage addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     [_headImage setBackgroundImage:[UIImage imageNamed:@"players_img_default"] forState:UIControlStateNormal];
+    _headImage.layer.cornerRadius = _headImage.frame.size.width/2.0f;
+    _headImage.layer.masksToBounds = YES;
     _headImage.tag = headBtnTag;
+    [_headImage setShowsTouchWhenHighlighted:YES];
     [self addSubview:_headImage];
     
     _headImage.backgroundColor = [UIColor clearColor];
@@ -172,65 +175,60 @@ PlayBar * instence = nil;
 }
 -(void)createOtherButton
 {
-    UIButton * menu = [UIButton buttonWithType:UIButtonTypeCustom];
-    menu.frame = CGRectMake(0, 0, 30, 30);
-    menu.center = CGPointMake(_headImage.frame.origin.x + _headImage.frame.size.width + 30, _headImage.center.y);
-    [menu addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    menu.tag = menuBtnTag;
-    [menu setBackgroundImage:[UIImage imageNamed:@"playlists_btn"] forState:UIControlStateNormal];
-    [menu setBackgroundImage:[UIImage imageNamed:@"playlists_btn_h"] forState:UIControlStateSelected];
-    [self addSubview:menu];
-    
     
     UIButton * proiv = [UIButton buttonWithType:UIButtonTypeCustom];
-    proiv.frame = CGRectMake(0, 0, 30, 30);
-    proiv.center = CGPointMake(menu.frame.origin.x + menu.frame.size.width + 30, menu.center.y);
+    proiv.frame = CGRectMake(0, 0, 50, 50);
+    proiv.center = CGPointMake(_headImage.frame.origin.x + _headImage.frame.size.width + 35, _headImage.center.y);
     [proiv addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     proiv.tag = proivBtnTag;
     [proiv setBackgroundImage:[UIImage imageNamed:@"previous_btn"] forState:UIControlStateNormal];
     [proiv setBackgroundImage:[UIImage imageNamed:@"previous_btn_h"] forState:UIControlStateSelected];
+    [proiv setShowsTouchWhenHighlighted:YES];
     [self addSubview:proiv];
     
     
     UIButton * play = [UIButton buttonWithType:UIButtonTypeCustom];
-    play.frame = CGRectMake(0, 0, 30, 30);
-    play.center = CGPointMake(proiv.frame.origin.x + proiv.frame.size.width + 30, proiv.center.y);
+    play.frame = CGRectMake(0, 0, 50, 50);
+    play.center = CGPointMake(proiv.frame.origin.x + proiv.frame.size.width + 40, proiv.center.y);
     [play addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     play.tag = playBtnTag;
     [play setBackgroundImage:[UIImage imageNamed:@"all_play"] forState:UIControlStateNormal];
     [play setBackgroundImage:[UIImage imageNamed:@"all_play_h"] forState:UIControlStateSelected];
     [self addSubview:play];
+    [play setShowsTouchWhenHighlighted:YES];
     [self changePlaybtnImage];
     
     
     UIButton * next = [UIButton buttonWithType:UIButtonTypeCustom];
-    next.frame = CGRectMake(0, 0, 30, 30);
-    next.center = CGPointMake(play.frame.origin.x + play.frame.size.width + 30, play.center.y);
+    next.frame = CGRectMake(0, 0, 50, 50);
+    next.center = CGPointMake(play.frame.origin.x + play.frame.size.width + 40, play.center.y);
     [next addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     next.tag = nextBtnTag;
     [next setBackgroundImage:[UIImage imageNamed:@"next_btn"] forState:UIControlStateNormal];
     [next setBackgroundImage:[UIImage imageNamed:@"next_btn_h"] forState:UIControlStateSelected];
+    [next setShowsTouchWhenHighlighted:YES];
     [self addSubview:next];
     
     
     UIButton * more = [UIButton buttonWithType:UIButtonTypeCustom];
-    more.frame = CGRectMake(0, 0, 30, 30);
-    more.center = CGPointMake(next.frame.origin.x + next.frame.size.width + 30, play.center.y);
+    more.frame = CGRectMake(0, 0, 50, 50);
+    more.center = CGPointMake(next.frame.origin.x + next.frame.size.width + 40, play.center.y);
     [more addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
     more.tag = moreBtnTag;
     [more setBackgroundImage:[UIImage imageNamed:@"player_menu_btn"] forState:UIControlStateNormal];
     [more setBackgroundImage:[UIImage imageNamed:@"player_menu_btn_h"] forState:UIControlStateSelected];
+    [more setShowsTouchWhenHighlighted:YES];
     [self addSubview:more];
     
     
-    UIButton * hidde = [UIButton buttonWithType:UIButtonTypeCustom];
-    hidde.frame = CGRectMake(0, 0, 16, self.bounds.size.height);
-    hidde.center = CGPointMake(kMainScreenWidth - 8, self.bounds.size.height/2.0f);
-    [hidde addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    hidde.tag = hiddeBtnTag;
-    [hidde setBackgroundImage:[UIImage imageNamed:@"players_hide_btn"] forState:UIControlStateNormal];
-    [hidde setBackgroundImage:[UIImage imageNamed:@"players_hide_btn_h"] forState:UIControlStateNormal];
-    [self addSubview:hidde];
+//    UIButton * hidde = [UIButton buttonWithType:UIButtonTypeCustom];
+//    hidde.frame = CGRectMake(0, 0, 16, self.bounds.size.height);
+//    hidde.center = CGPointMake(kMainScreenWidth - 8, self.bounds.size.height/2.0f);
+//    [hidde addTarget:self action:@selector(ButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+//    hidde.tag = hiddeBtnTag;
+//    [hidde setBackgroundImage:[UIImage imageNamed:@"players_hide_btn"] forState:UIControlStateNormal];
+//    [hidde setBackgroundImage:[UIImage imageNamed:@"players_hide_btn_h"] forState:UIControlStateNormal];
+//    [self addSubview:hidde];
 }
 
 #pragma mark - listener methods
@@ -389,11 +387,13 @@ PlayBar * instence = nil;
 
 -(void)playPrevMusic
 {
-    autoPlay = NO;
-    currentIndex = currentIndex + (int)_queueSongArray.count - 1;
-    currentIndex %= (int)_queueSongArray.count;
-    [audioPlayer clearQueue];
-    [self setPlayerData:currentIndex];
+    if (_queueSongArray.count>0) {
+        autoPlay = NO;
+        currentIndex = currentIndex + (int)_queueSongArray.count - 1;
+        currentIndex %= (int)_queueSongArray.count;
+        [audioPlayer clearQueue];
+        [self setPlayerData:currentIndex];
+    }
 }
 -(void)resumeOrPause
 {
@@ -412,11 +412,13 @@ PlayBar * instence = nil;
 }
 -(void)playNextMusic
 {
-    autoPlay = NO;
-    currentIndex ++;
-    currentIndex %= (int)_queueSongArray.count;
-    [audioPlayer clearQueue];
-    [self setPlayerData:currentIndex];
+    if (_queueSongArray.count>0) {
+        autoPlay = NO;
+        currentIndex ++;
+        currentIndex %= (int)_queueSongArray.count;
+        [audioPlayer clearQueue];
+        [self setPlayerData:currentIndex];
+    }
 }
 
 
